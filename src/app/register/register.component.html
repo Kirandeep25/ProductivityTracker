@@ -1,0 +1,36 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2>Register</h2>
+            <form (ngSubmit)="register()">
+                <div class="mb-3">
+                    <label for="userid" class="form-label">User ID</label>
+                    <input type="text" id="userid" [(ngModel)]="userid" name="userid" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" id="username" [(ngModel)]="username" name="username" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" class="form-control" required />
+                </div>
+
+                <div *ngIf="errorMessage" class="text-danger">
+                    {{ errorMessage }}
+                </div>
+
+                <button type="submit" class="btn btn-success">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

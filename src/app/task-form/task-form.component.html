@@ -1,0 +1,91 @@
+<div class="task-form-container">
+    <h2>{{ isEditMode ? 'Edit Task' : 'Create Task' }}</h2>
+
+    <form (ngSubmit)="saveTask()" #taskForm="ngForm">
+      
+      <!-- Task ID (Only for Create Mode) -->
+      <div class="form-group" *ngIf="!isEditMode">
+        <label for="taskid">Task ID</label>
+        <input 
+          type="number" 
+          id="taskid" 
+          class="form-control" 
+          [(ngModel)]="task.taskid" 
+          name="taskid" 
+          required 
+          placeholder="Enter Task ID"
+        />
+      </div>
+
+      <!-- Title Field -->
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input 
+          type="text" 
+          id="title" 
+          class="form-control" 
+          [(ngModel)]="task.title" 
+          name="title" 
+          required 
+          placeholder="Enter task title"
+        />
+      </div>
+
+      <!-- Description Field -->
+      <div class="form-group">
+        <label for="desc">Description</label>
+        <textarea 
+          id="desc" 
+          class="form-control" 
+          [(ngModel)]="task.desc" 
+          name="desc" 
+          required 
+          placeholder="Enter task description"
+        ></textarea>
+      </div>
+
+      <!-- Due Date Field -->
+      <div class="form-group">
+        <label for="duedate">Due Date</label>
+        <input 
+          type="date" 
+          id="duedate" 
+          class="form-control" 
+          [(ngModel)]="task.duedate" 
+          name="duedate" 
+          required
+        />
+      </div>
+
+      <!-- Task Status Dropdown -->
+      <div class="form-group">
+        <label for="taskstatus">Task Status</label>
+        <select 
+          id="taskstatus" 
+          class="form-control" 
+          [(ngModel)]="task.taskstatus" 
+          name="taskstatus" 
+          required
+        >
+          <option value="">Select Status</option>
+          <option value="Pending">Pending</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Completed">Completed</option>
+          <option value="Nothing">Nothing</option>
+        </select>
+      </div>
+
+      <!-- Buttons -->
+      <div class="form-buttons">
+        <button type="submit" class="btn btn-primary" [disabled]="!taskForm.valid">
+          {{ isEditMode ? 'Update Task' : 'Add Task' }}
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="navigateToTasks()">
+          Cancel
+        </button>
+      </div>
+
+    </form>
+</div>
+
+  

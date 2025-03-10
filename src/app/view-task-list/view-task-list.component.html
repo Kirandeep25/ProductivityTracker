@@ -1,0 +1,36 @@
+<div class="task-list-container">
+    <h2>Task List</h2>
+    <button class="create-btn" (click)="addTask()">➕ Create Task</button>
+  
+    <table class="task-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Due Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of taskList.tasks">
+          <td>{{ task.title }}</td>
+          <td>{{ task.desc }}</td>
+          <td>{{ task.duedate }}</td>
+          <td>
+            <span class="status-label" [ngClass]="task.taskstatus.toLowerCase()">
+              {{ task.taskstatus }}
+            </span>
+          </td>
+          <td>
+            <button class="edit-btn" (click)="editTask(task.taskid)">✏️ Update</button>
+            <button class="delete-btn" (click)="deleteTask(task.taskid)">🗑️ Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  
+  
+  

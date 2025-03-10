@@ -1,0 +1,92 @@
+.task-list-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .create-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+  
+  .task-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .task-table th, .task-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .task-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .task-table tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .status-label {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  .status-label.pending {
+    background-color: #ffc107;
+    color: #333;
+  }
+  
+  .status-label.in-progress {
+    background-color: #17a2b8;
+    color: white;
+  }
+  
+  .status-label.completed {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .status-label.nothing {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .edit-btn, .delete-btn {
+    border: none;
+    padding: 8px 12px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .edit-btn {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .delete-btn {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  @media (max-width: 600px) {
+    .task-table th, .task-table td {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    .edit-btn, .delete-btn {
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+  }
+  
